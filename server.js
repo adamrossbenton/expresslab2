@@ -43,3 +43,5 @@ app.get('/magic/:question',(req,res) => {
     const getResponse = responses[Math.floor(Math.random()*responses.length)]
     res.send(`My response: ${getResponse}`)
 })
+
+// test
