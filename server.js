@@ -43,3 +43,9 @@ app.get('/magic/:question',(req,res) => {
     const getResponse = responses[Math.floor(Math.random()*responses.length)]
     res.send(`My response: ${getResponse}`)
 })
+
+// Fibonacci
+
+app.get('/fibonacci/:num', (req,res) => {
+    
+})
