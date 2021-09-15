@@ -45,7 +45,17 @@ app.get('/magic/:question',(req,res) => {
 })
 
 // Fibonacci
+// Source for Fibonacci formula (NOT code, just formula):
+// https://www.geeksforgeeks.org/check-number-fibonacci-number/
+// n = F if (5n^2 + 4) || (5n^2 - 4) = perfect square
 
 app.get('/fibonacci/:num', (req,res) => {
-    
+    let n = req.params.num
+    let npos = Math.sqrt(5*(n**2) + 4)
+    let nneg = Math.sqrt(5*(n**2) - 4)
+    if (Number.isInteger(npos) || Number.isInteger(nneg)) {
+        res.send("Very good. It is Fibonacci")
+    } else {
+        res.send("I can tell this is not a Fibonacci number.")
+    }
 })
